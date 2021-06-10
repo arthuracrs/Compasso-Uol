@@ -10,7 +10,8 @@ const mongoose = require("mongoose")
 const connectWithRetry = () => {
     mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URI}/${MONGO_DB_NAME}`, {
             useNewUrlParser: true,
-            useUnifiedTopology: true
+            useUnifiedTopology: true,
+            useFindAndModify: false
         })
         .then(() => { console.log("Succesfully connected to database") })
         .catch(e => {

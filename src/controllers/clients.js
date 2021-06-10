@@ -42,7 +42,7 @@ module.exports = {
         try {
             const { clientId } = req.params
 
-            const client = await clientRepository.update(clientId, req.body)
+            const client = await clientRepository.update(clientId, {name: req.body.name})
 
             return res.status(200).json({
                 message: 'Cliente atualizado com sucesso!',

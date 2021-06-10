@@ -18,9 +18,9 @@ module.exports = {
         return client
     },
     find: async(query) => {
-        if (query.id) {
+        if (query.id)
             query = { _id: query.id }
-        }
+
         const client = await clientModel.find(query).populate('city')
 
         return client

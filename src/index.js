@@ -1,6 +1,7 @@
 require("dotenv").config()
 
 const express = require("express")
+const helmet = require("helmet")
 
 const mongoDBService = require("./services/mongo")
 
@@ -10,6 +11,7 @@ const citiesRouter = require("./routes/cities")
 mongoDBService.connectWithRetry()
 
 const app = express()
+app.use(helmet())
 
 app.use(express.json())
 

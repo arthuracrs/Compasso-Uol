@@ -15,16 +15,15 @@ module.exports = {
         catch (e) {
             console.log(e)
             return res.status(400).json({
-                message: 'fail'
+                message: 'Falhou'
             })
         }
-
     },
     getOne: async(req, res) => {
         try {
-            const { clientId } = req.params
+            req.query
 
-            const client = await clientRepository.find(clientId)
+            const client = await clientRepository.find(req.query)
 
             return res.status(200).json({
                 message: 'Cliente buscado com sucesso!',
@@ -35,7 +34,7 @@ module.exports = {
         catch (e) {
             console.log(e)
             return res.status(400).json({
-                message: 'fail'
+                message: 'Falhou'
             })
         }
     },
@@ -49,15 +48,13 @@ module.exports = {
                 message: 'Cliente atualizado com sucesso!',
                 data: client
             })
-
         }
         catch (e) {
             console.log(e)
             return res.status(400).json({
-                message: 'fail'
+                message: 'Falhou'
             })
         }
-
     },
     destroy: async(req, res) => {
         try {
@@ -74,7 +71,7 @@ module.exports = {
         catch (e) {
             console.log(e)
             return res.status(400).json({
-                message: 'fail'
+                message: 'Falhou'
             })
         }
     }

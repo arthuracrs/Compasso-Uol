@@ -15,6 +15,13 @@ app.use(express.json())
 
 app.use('/api/v1/clients', clientsRouter)
 app.use('/api/v1/cities', citiesRouter)
+app.use(function(err, req, res, next) {
+    console.error(err.stack);
+    res.status(500).send('Ocorreu um erro!');
+});
+app.use(function(req, res, next) {
+    res.status(404).send('Esse lugar não foi encontrado!');
+});
 
 const port = process.env.PORT || 3000
 

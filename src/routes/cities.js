@@ -4,12 +4,12 @@ const citiesControllers = require("../controllers/cities.js")
 
 const router = express.Router()
 
-router.get('/cities', citiesControllers.getOne)
+router.get('/', citiesControllers.getOne)
 
 router.post('/', citiesControllers.create)
 
-router.put('/', citiesControllers.update)
+router.put('/:cityId', citiesControllers.update)
 
-router.delete('/', citiesControllers.destroy)
+router.delete('/:cityId', citiesControllers.destroy)
 
 module.exports = router

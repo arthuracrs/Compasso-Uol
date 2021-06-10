@@ -11,7 +11,7 @@ module.exports = {
     },
     update: async(id, body) => {
         const client = await clientModel.findByIdAndUpdate(id, body, { new: true })
-        
+
         return client
     },
     find: async(id) => {
@@ -19,7 +19,9 @@ module.exports = {
 
         return client
     },
-    destroy: async() => {
-
+    destroy: async(id) => {
+        const client = await clientModel.findOneAndDelete(id)
+        
+        return client
     }
 }

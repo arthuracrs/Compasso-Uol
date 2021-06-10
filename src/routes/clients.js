@@ -10,6 +10,6 @@ router.post('/', clientsControllers.create)
 
 router.put('/:clientId', clientsControllers.update)
 
-router.delete('/', clientsControllers.destroy)
+router.delete('/:clientId', clientsControllers.destroy)
 
 module.exports = router

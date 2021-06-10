@@ -42,7 +42,7 @@ module.exports = {
     update: async(req, res) => {
         try {
             const { clientId } = req.params
-            
+
             const client = await clientRepository.update(clientId, req.body)
 
             return res.status(200).json({
@@ -59,7 +59,23 @@ module.exports = {
         }
 
     },
-    destroy: (req, res) => {
-        res.status(200).send('Cliente deletado com sucesso!')
+    destroy: async(req, res) => {
+        try {
+            const { clientId } = req.params
+
+            const client = await clientRepository.destroy(clientId)
+
+            return res.status(200).json({
+                message: 'Cliente deletado com sucesso!',
+                data: client
+            })
+
+        }
+        catch (e) {
+            console.log(e)
+            return res.status(400).json({
+                message: 'fail'
+            })
+        }
     }
 }

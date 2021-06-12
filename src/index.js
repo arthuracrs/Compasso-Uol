@@ -1,32 +1,31 @@
-require("dotenv").config()
+require('dotenv').config();
 
-const express = require("express")
-const helmet = require("helmet")
+const express = require('express');
+const helmet = require('helmet');
 
-const mongoDBService = require("./services/mongo")
+const { APPLICATION_PORT } = require('./config/config');
 
-const clientsRouter = require("./routes/clients")
-const citiesRouter = require("./routes/cities")
+const mongoDBService = require('./services/mongo');
 
-mongoDBService.connectWithRetry()
+const clientsRouter = require('./routes/clients.router');
+const citiesRouter = require('./routes/cities.router');
 
-const app = express()
-app.use(helmet())
+mongoDBService.connectWithRetry();
+const app = express();
 
-app.use(express.json())
+app.use(helmet());
+app.use(express.json());
 
-app.use('/api/v1/clients', clientsRouter)
-app.use('/api/v1/cities', citiesRouter)
-app.use(function(err, req, res, next) {
-    console.error(err.stack);
-    res.status(500).send('Ocorreu um erro!');
+app.use('/api/v1/clients', clientsRouter);
+app.use('/api/v1/cities', citiesRouter);
+app.use((err, req, res) => {
+  console.error(err.stack);
+  res.status(500).send('Ocorreu um erro!');
 });
-app.use(function(req, res, next) {
-    res.status(404).send('Esse lugar não foi encontrado!');
+app.use((req, res) => {
+  res.status(404).send('Esse lugar não foi encontrado!');
 });
 
-const port = process.env.PORT || 3000
-
-app.listen(port, () => {
-    console.log(`Running server on port: ${port}`)
-})
+app.listen(APPLICATION_PORT, () => {
+  console.log(`Running server on port: ${APPLICATION_PORT}`);
+});

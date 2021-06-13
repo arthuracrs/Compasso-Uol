@@ -1,14 +1,9 @@
 const mongoose = require('mongoose');
 
-const {
-  MONGO_USER,
-  MONGO_PASSWORD,
-  MONGO_URI,
-  MONGO_DB_NAME,
-} = require('../config/config');
+const uri = `'mongodb://mongo:27017/docker-node-mongo',`
 
 const connectWithRetry = () => {
-  mongoose.connect(`mongodb+srv://${MONGO_USER}:${MONGO_PASSWORD}@${MONGO_URI}/${MONGO_DB_NAME}`, {
+  mongoose.connect(uri, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
     useFindAndModify: false,

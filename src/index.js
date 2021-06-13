@@ -1,9 +1,6 @@
-require('dotenv').config();
-
+const config = require("config")
 const express = require('express');
 const helmet = require('helmet');
-
-const { APPLICATION_PORT } = require('./config/config');
 
 const mongoDBService = require('./services/mongo');
 
@@ -26,6 +23,8 @@ app.use((req, res) => {
   res.status(404).send('Esse lugar não foi encontrado!');
 });
 
-app.listen(APPLICATION_PORT, () => {
-  console.log(`Running server on port: ${APPLICATION_PORT}`);
+app.listen(config.get('port'), () => {
+   console.log(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
 });
+
+module.exports = app;

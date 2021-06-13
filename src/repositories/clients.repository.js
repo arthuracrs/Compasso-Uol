@@ -16,10 +16,11 @@ module.exports = {
     return client;
   },
   find: async (query) => {
-    let tempQuery = {}
+    const tempQuery = {};
+
     if (query.id) tempQuery._id = query.id;
     if (query.name) tempQuery.name = query.name;
-    
+
     const client = await ClientModel.findOne(tempQuery).populate('city');
 
     return client;

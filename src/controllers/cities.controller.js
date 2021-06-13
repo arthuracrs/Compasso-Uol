@@ -23,7 +23,7 @@ module.exports = {
       if (req.query.state) query.state = req.query.state;
 
       if (query && Object.keys(query).length === 0 && query.constructor === Object) {
-        throw 'Deliberate Error!';
+        throw new Error('Deliberate Error!');
       }
 
       const city = await citiesRepository.find(query);

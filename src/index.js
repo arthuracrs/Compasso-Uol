@@ -18,7 +18,7 @@ app.use(express.json());
 
 app.use('/api/v1/clients', clientsRouter);
 app.use('/api/v1/cities', citiesRouter);
-app.use((err, req, res, next) => {
+app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   console.error(err);
   res.status(500).send('Ocorreu um erro!');
 });

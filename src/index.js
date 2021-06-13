@@ -1,4 +1,5 @@
 const config = require("config")
+const debug =require('debug')('server:debug');
 const express = require('express');
 const helmet = require('helmet');
 
@@ -24,7 +25,7 @@ app.use((req, res) => {
 });
 
 app.listen(config.get('port'), () => {
-   console.log(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
+   debug(`server is running on port ${config.get('port')} and in ${config.get('name')} mode`);
 });
 
 module.exports = app;

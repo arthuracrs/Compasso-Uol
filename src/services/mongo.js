@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 const config = require("config")
+const debug =require('debug')('server:debug');
 
 const connectWithRetry = () => {
   mongoose.connect(config.get('database'), {
@@ -8,10 +9,10 @@ const connectWithRetry = () => {
     useFindAndModify: false,
   })
     .then(() => {
-      console.log('Succesfully connected to database');
+      debug('Succesfully connected to database');
     })
     .catch((e) => {
-      console.log(e);
+      debug(e);
       setTimeout(connectWithRetry, 5000);
     });
 };

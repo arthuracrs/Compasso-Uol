@@ -2,6 +2,7 @@ const config = require("config")
 const debug =require('debug')('server:debug');
 const express = require('express');
 const helmet = require('helmet');
+const cors = require("cors")
 
 const mongoDBService = require('./services/mongo');
 
@@ -13,6 +14,7 @@ const app = express();
 
 app.use(helmet());
 app.use(express.json());
+app.use(cors({}))
 
 app.use('/api/v1/clients', clientsRouter);
 app.use('/api/v1/cities', citiesRouter);

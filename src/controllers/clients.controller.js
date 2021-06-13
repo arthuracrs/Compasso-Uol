@@ -1,4 +1,5 @@
 const clientRepository = require('../repositories/clients.repository');
+const cityRepository = require('../repositories/cities.repository');
 
 module.exports = {
   create: async (req, res) => {
@@ -6,21 +7,22 @@ module.exports = {
       const {
         name, sex, birthDate, age, city,
       } = req.body;
-      
-      const cityName = await clientRepository.find({name: city})
-      if(!cityName) {
+
+      const cityDocument = await cityRepository.find({ name: city });
+      if (!cityDocument) {
         return res.status(400).json({
           message: 'A cidade informada não existe!',
-        });    
+        });
       }
-      
-      const newClient = await clientRepository.save(name, sex, birthDate, age, city);
+
+      const newClient = await clientRepository.save(name, sex, birthDate, age, cityDocument[0]._id);
 
       return res.status(201).json({
         message: 'Cliente criado com sucesso!',
         data: newClient,
       });
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -28,17 +30,22 @@ module.exports = {
   },
   getOne: async (req, res) => {
     try {
-      let query = {};
-      if (query.id) query._id = query.id;
-      if (query.name) query.name = query.name;
-      
-      const client = await clientRepository.find(query);
+      const query = {};
+      if (req.query.id) query.id = req.query.id;
+      if (req.query.name) query.name = req.query.name;
+
+      if (query && Object.keys(query).length === 0 && query.constructor === Object) {
+        throw 'Deliberate Error!';
+      }
+
+      const client = await clientRepository.find(req.query);
 
       return res.status(200).json({
         message: 'Cliente buscado com sucesso!',
         data: client,
       });
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -54,6 +61,7 @@ module.exports = {
         data: client,
       });
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -69,6 +77,7 @@ module.exports = {
         data: client,
       });
     } catch (e) {
+      console.log(e);
       return res.status(400).json({
         message: 'Falhou',
       });

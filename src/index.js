@@ -18,8 +18,8 @@ app.use(express.json());
 
 app.use('/api/v1/clients', clientsRouter);
 app.use('/api/v1/cities', citiesRouter);
-app.use((err, req, res) => {
-  console.error(err.stack);
+app.use((err, req, res, next) => {
+  console.error(err);
   res.status(500).send('Ocorreu um erro!');
 });
 app.use((req, res) => {

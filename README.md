@@ -17,9 +17,9 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 <!--te-->
 ## Instalação 
 ```bash
-$ git clone https://github.com/arthuracrs/Compasso-Uol
-$ cd Compasso-Uol
-$ docker-compose up -d
+git clone https://github.com/arthuracrs/Compasso-Uol
+cd Compasso-Uol
+docker-compose up -d
 ```
 ## Quick Start
 

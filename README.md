@@ -29,7 +29,7 @@ $ docker-compose up -d
 ```bash
 $ npm run dev
 ```
-- Executar Testes de integração com o Mocha
+- Executar Testes de integração com o Mocha.
 Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 ```bash
 $ npm run test

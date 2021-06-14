@@ -23,7 +23,7 @@ docker-compose up -d
 ```
 ## Quick Start
 
-- **Modo Productionv.
+- **Modo Production**.
 Para o modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
 ```bash
 $ docker-compose up -d

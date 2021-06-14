@@ -4,6 +4,7 @@
 Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
 [Git](https://git-scm.com), 
 [Node.js](https://nodejs.org/en/), 
+[MongoDB](https://www.mongodb.com/)
 [Docker](https://www.docker.com/),
 [Docker-Compose](https://docs.docker.com/compose/),
 [NPM](https://www.npmjs.com/)
@@ -12,22 +13,24 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
    * Docker v20.10.7
    * Docker-Compose v1.29.2
    * Node v16.3.0
-   * Express
+   * MongoDB
 <!--te-->
 
 ## Quick Start
 
 Modo Production
-Para modo de produção, é necessário utilizar o docker-compose. 
+Para modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
 ```bash
 $ docker-compose up -d
 ```
-Modo Development
+- Modo Development.
+ Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 
 ```bash
 $ npm run dev
 ```
 Executar Testes de integração com o Mocha
+Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 ```bash
 $ npm run test
 ```

@@ -50,7 +50,7 @@ $ npm run eslint
  ```
  Payload:
  {
-  city: 'Petrolina',
+  name: 'Petrolina',
   state: 'Pernambuco'
 }
 ```

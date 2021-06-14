@@ -5,7 +5,8 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 [Git](https://git-scm.com), 
 [Node.js](https://nodejs.org/en/), 
 [Docker](https://www.docker.com/),
-[Docker-Compose](https://docs.docker.com/compose/)
+[Docker-Compose](https://docs.docker.com/compose/),
+[NPM](https://www.npmjs.com/)
 ## Tecnologias Utilizadas:
 <!--ts-->
    * Docker v20.10.7

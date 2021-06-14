@@ -18,7 +18,7 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ## Quick Start
 
-Modo Production
+- Modo Production
 Para modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
 ```bash
 $ docker-compose up -d
@@ -29,12 +29,12 @@ $ docker-compose up -d
 ```bash
 $ npm run dev
 ```
-Executar Testes de integração com o Mocha
+- Executar Testes de integração com o Mocha
 Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 ```bash
 $ npm run test
 ```
-Executar verificação com do Eslint
+- Executar verificação com do Eslint
 ```bash
 $ npm run eslint
 ```

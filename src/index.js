@@ -19,7 +19,7 @@ app.use(cors({}));
 app.use('/api/v1/clients', clientsRouter);
 app.use('/api/v1/cities', citiesRouter);
 app.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
-  console.error(err);
+  debug(err);
   res.status(500).send('Ocorreu um erro!');
 });
 app.use((req, res) => {

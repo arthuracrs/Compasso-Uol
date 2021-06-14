@@ -1,3 +1,4 @@
+const debug = require('debug')('server:debug');
 const citiesRepository = require('../repositories/cities.repository');
 
 module.exports = {
@@ -10,7 +11,7 @@ module.exports = {
         data: newCity,
       });
     } catch (e) {
-      console.log(e);
+      debug(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -34,7 +35,7 @@ module.exports = {
         data: city,
       });
     } catch (e) {
-      console.log(e);
+      debug(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -49,7 +50,7 @@ module.exports = {
         data: city,
       });
     } catch (e) {
-      console.log(e);
+      debug(e);
       return res.status(400).json({
         message: 'Falhou',
       });
@@ -64,7 +65,7 @@ module.exports = {
         data: city,
       });
     } catch (e) {
-      console.log(e);
+      debug(e);
       return res.status(400).json({
         message: 'Falhou',
       });

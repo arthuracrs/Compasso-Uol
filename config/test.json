@@ -1,5 +1,5 @@
 {
     "name": "Server Test",
     "database": "mongodb+srv://thesupremebot:123@cluster0.hjizl.mongodb.net/test?retryWrites=true&w=majority",
-    "port": 3000
+    "port": 3100
 }

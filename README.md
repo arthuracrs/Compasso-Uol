@@ -1,14 +1,22 @@
 # Compasso-Uol
 
+## Tecnologias Utilizadas:
+<!--ts-->
+   * Docker v20.10.7
+   * Docker-Compose v1.29.2
+   * Node v16.3.0
+   * Express
+<!--te-->
 
 ## Quick Start
-Essa aplicação 
 
 Modo Production
+Para modo de produção, é necessário utilizar o docker-compose. 
 ```bash
 $ docker-compose up -d
 ```
 Modo Development
+
 ```bash
 $ npm run dev
 ```

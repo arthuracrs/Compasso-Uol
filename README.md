@@ -1,6 +1,27 @@
 # Compasso-Uol
 
-operações expostas como endpoints REST:
+
+## Quick Start
+Essa aplicação 
+
+Modo Production
+```bash
+$ docker-compose up -d
+```
+Modo Development
+```bash
+$ npm run dev
+```
+Executar Testes de integração com o Mocha
+```bash
+$ npm run test
+```
+Executar verificação com do Eslint
+```bash
+$ npm run eslint
+```
+
+## operações expostas como endpoints REST:
 
 Cadastrar cidade: POST /api/v1/cities
 Cadastrar cliente: POST /api/v1/clients

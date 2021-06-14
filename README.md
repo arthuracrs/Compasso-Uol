@@ -47,12 +47,12 @@ $ npm run eslint
 ## operações expostas como endpoints REST:
 <!--ts-->
 * Cadastrar cidade: POST /api/v1/cities
-   * ```bash
-Payload:
-{
-  city: 'Petrolina',
-  state: 'Pernambuco'
-}
+ ```
+      Payload:
+    {
+      city: 'Petrolina',
+      state: 'Pernambuco'
+     }
 ```
 * Cadastrar cliente: POST /api/v1/clients
 * Consultar cidade pelo nome: GET /api/v1/cities/?city= **NOME DA CIDADE**

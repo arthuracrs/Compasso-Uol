@@ -23,7 +23,9 @@ module.exports = {
       if (req.query.state) query.state = req.query.state;
 
       if (query && Object.keys(query).length === 0 && query.constructor === Object) {
-        throw new Error('Deliberate Error!');
+        return res.status(400).json({
+          message: 'Erro nos argumentos',
+        });
       }
 
       const city = await citiesRepository.find(query);

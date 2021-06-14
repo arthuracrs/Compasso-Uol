@@ -1,8 +1,9 @@
 const mongoose = require('mongoose');
-const config = require("config")
-const debug =require('debug')('server:debug');
+const config = require('config');
+const debug = require('debug')('server:debug');
 
 const connectWithRetry = () => {
+  debug(config.get('database'));
   mongoose.connect(config.get('database'), {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -18,16 +19,16 @@ const connectWithRetry = () => {
 };
 
 const dbConnect = () => {
-    mongoose.connect(config.get('database'), { useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false})
-    return mongoose.connection
-  }
-  
-const dbClose= ()=> {
-    return mongoose.disconnect();
-  }
+  mongoose.connect(config.get('database'), {
+    useNewUrlParser: true, useCreateIndex: true, useUnifiedTopology: true, useFindAndModify: false,
+  });
+  return mongoose.connection;
+};
+
+const dbClose = () => mongoose.disconnect();
 
 module.exports = {
   connectWithRetry,
   dbConnect,
-  dbClose
+  dbClose,
 };

@@ -1,5 +1,5 @@
 {
-    "name": "Server Developement",
+    "name": "Server Default",
     "database": "mongodb+srv://thesupremebot:123@cluster0.hjizl.mongodb.net/development?retryWrites=true&w=majority",
     "port": 3000
 }

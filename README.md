@@ -23,23 +23,23 @@ docker-compose up -d
 ```
 ## Quick Start
 
-- Modo Production.
+- **Modo Productionv.
 Para o modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
 ```bash
 $ docker-compose up -d
 ```
-- Modo Development.
+- **Modo Development**.
  Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 
 ```bash
 $ npm run dev
 ```
-- Executar Testes de integração com o Mocha.
+- **Executar Testes de integração com o Mocha**.
 Aqui o Banco de Dados é executado no serviço MongoDB Atlas.
 ```bash
 $ npm run test
 ```
-- Executar verificação com do Eslint
+- **Executar a verificação do Eslint**
 ```bash
 $ npm run eslint
 ```

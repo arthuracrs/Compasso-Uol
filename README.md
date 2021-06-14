@@ -18,8 +18,8 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
 
 ## Quick Start
 
-- Modo Production
-Para modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
+- Modo Production.
+Para o modo de produção, é necessário utilizar o docker-compose. Aqui o Banco de Dados será executado num container.
 ```bash
 $ docker-compose up -d
 ```

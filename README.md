@@ -15,7 +15,12 @@ Antes de começar, você vai precisar ter instalado em sua máquina as seguintes
    * Node v16.3.0
    * MongoDB
 <!--te-->
-
+## Instalação 
+```bash
+$ git clone https://github.com/arthuracrs/Compasso-Uol
+$ cd Compasso-Uol
+$ docker-compose up -d
+```
 ## Quick Start
 
 - Modo Production.

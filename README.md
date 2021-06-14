@@ -48,13 +48,20 @@ $ npm run eslint
 <!--ts-->
 * Cadastrar cidade: POST /api/v1/cities
  ```
-      Payload:
-    {
-      city: 'Petrolina',
-      state: 'Pernambuco'
-     }
+ Payload:
+ {
+  city: 'Petrolina',
+  state: 'Pernambuco'
+}
 ```
 * Cadastrar cliente: POST /api/v1/clients
+* ```
+ Payload:
+ {
+  city: 'Petrolina',
+  state: 'Pernambuco'
+}
+```
 * Consultar cidade pelo nome: GET /api/v1/cities/?city= **NOME DA CIDADE**
 * Consultar cidade pelo estado: GET /api/v1/cities/?state= **ESTADO DA CIDADE**
 * Consultar cliente pelo nome: GET /api/v1/clients/?name= **NOME DO CLIENTE**

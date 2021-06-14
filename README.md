@@ -55,11 +55,14 @@ $ npm run eslint
 }
 ```
 * Cadastrar cliente: POST /api/v1/clients
-* ```
+```
  Payload:
  {
-  city: 'Petrolina',
-  state: 'Pernambuco'
+  name: 'Arthur',
+  age: '18',
+  city: 'Petropolis',
+  sex: 'Masculino',
+  birthDate: '20/03/2003',
 }
 ```
 * Consultar cidade pelo nome: GET /api/v1/cities/?city= **NOME DA CIDADE**
@@ -68,4 +71,10 @@ $ npm run eslint
 * Consultar cliente pelo Id: GET /api/v1/clients/?id= **ID DO CLIENTE**
 * Remover cliente: DELETE /api/v1/clients/ **ID DO CLIENTE**
 * Alterar o nome do cliente PUT /api/v1/clients/ **ID DO CLIENTE**
+ ```
+ Payload:
+ {
+  name: 'Calebe'
+}
+```
 <!--te-->

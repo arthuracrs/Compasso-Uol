@@ -35,10 +35,6 @@ module.exports = {
       if (req.query.id) query.id = req.query.id;
       if (req.query.name) query.name = req.query.name;
 
-      if (query && Object.keys(query).length === 0 && query.constructor === Object) {
-        throw new Error('Deliberate Error!');
-      }
-
       const client = await clientRepository.find(req.query);
 
       return res.status(200).json({

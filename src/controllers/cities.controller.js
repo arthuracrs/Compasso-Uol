@@ -23,12 +23,6 @@ module.exports = {
       if (req.query.city) query.name = req.query.city;
       if (req.query.state) query.state = req.query.state;
 
-      if (query && Object.keys(query).length === 0 && query.constructor === Object) {
-        return res.status(400).json({
-          message: 'Erro nos argumentos',
-        });
-      }
-
       const city = await citiesRepository.find(query);
       return res.status(200).send({
         message: 'Cidade buscada com sucesso!',
